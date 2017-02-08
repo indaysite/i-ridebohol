@@ -1,0 +1,230 @@
+.contact-container
+   background-color: $section-main
+   margin-left: 1.2rem
+   margin-right: 1.2rem
+   border:
+      width: 0px 1px
+      style: solid
+      color: rgba($section-alt-blue, 1)
+
+   .contact-content-flex
+      margin-top: 2rem
+      +display(block)
+
+      .address-content
+         width: 100%
+         +position(relative)
+         margin: 0px auto
+         text-align: center
+
+         .address-item
+            margin-bottom: 1.5rem
+            width: 100%
+
+            .sub-content-flex
+               +display(flex)
+               +justify-content(center)
+
+               .blurb
+                  margin-right: .5rem
+                  margin-bottom: 0px
+                  +align-self(center)
+
+               .cta
+                  +display(block)
+                  +align-self(center)
+                  background-color: #ffd24d
+                  border-radius: 3px
+                  padding: 5px 6px
+                  +size(auto 44px)
+
+                  svg
+                     float: left
+                     +size(auto 100%)
+                     fill: #1b4145
+         
+         .address .sub-content-flex .blurb
+            margin-right: 0px         
+
+         .socials-container
+            padding-top: 3px
+
+            .social
+               +size(50px)
+               +display(inline-block)
+               margin: 0px .2rem
+               +transition()
+
+               img
+                  +size(100%)
+
+      .map
+         width: 100%
+         height: 422px
+         text-align: right
+         margin: 3rem 0px 5rem
+
+         iframe
+            +size(100%)
+
+      .form
+         margin-top: 0px
+         +size(100% auto)
+         background-color: $section-alt
+         background-color: $section-main
+
+         form
+            max-width: 450px
+            margin: 0px auto
+
+            fieldset, label
+               border: 0px
+               margin: 0px
+               padding: 0px
+
+               span
+                  font-weight: 300
+
+            label
+               +display(inline-block)
+
+            input, textarea
+               border: 1px solid $border
+               border-radius: 4px
+               font-weight: 300
+               +display(block)
+               padding: .3rem .5rem
+
+               &:focus
+                  outline: none
+
+            .contact-info-group
+               margin-top: 1rem
+
+               label
+                  +display(flex)
+                  margin-top: 1rem
+
+                  span
+                     +flex(0 0 60px)
+                     +display(block)
+                     line-height: 2
+                     text-align: center
+                     background-color: $section-alt
+                     border: 1px solid $border
+                     border-right: 0px                     
+                     border-radius: 4px 0px 0px 4px
+
+                  input
+                     +flex(1 1 auto)
+                     border-radius: 0px 4px 4px 0px
+                     width: 50px
+
+            .contact-message
+               margin-top: 1rem
+               +display(block)
+
+               textarea
+                  +size(100% 12em)
+                  resize: none
+
+            .submit
+               margin-top: 1rem
+
+               [type="submit"]
+                  float: right
+                  color: $section-alt-darkblue
+                  background-color: $section-main
+                  padding: .5rem 1rem .4rem
+                  font-weight: 600
+                  text-transform: uppercase
+                  font-size: 1.1rem
+
+                  &:hover
+                     background-color: $section-alt-darkblue
+                     color: $section-main
+                  
+@media screen and (min-width: 500px)
+   .contact-container
+      .contact-content-flex
+         .form
+            form
+               .contact-info-group
+                  label
+                     margin-top: 1.6rem
+
+                     span
+                        +flex(0 0 80px)
+                        line-height: 2.4
+
+               .contact-message
+                  margin-top: 1.5rem
+
+               .submit
+                  [type="submit"]
+                     padding: .5rem 1.2rem
+                     font-size: 1.2rem
+
+                     
+@media screen and (min-width: 768px)
+   .contact-container
+      margin: 0px auto
+      
+      .contact-content-flex
+         +display(flex)
+         +flex-wrap(wrap)
+
+         .address-content
+            +flex(0 0 300px)
+            width: initial
+            margin-right: 1rem
+            text-align: left
+
+            .address-item
+               margin-bottom: 1.5rem
+
+               .sub-content-flex
+                  +justify-content(flex-start)
+                        
+            .phone, .email
+               .sub-content-flex .cta
+                  +display(none)
+
+            .socials-container
+               .social
+                  margin: 0px .4rem
+                  margin-left: 0px                  
+
+         .map
+            +flex(0 1 400px)
+            width: initial
+            height: 390px
+            margin: 0px
+
+         .form
+            margin-top: 2rem
+
+            form
+               max-width: 500px
+               margin-left: 0px
+               margin-right: 0px
+               
+               .submit
+                  [type="submit"]
+                     font-size: 1.4rem
+                     
+@media screen and (min-width: 992px)
+   .contact-container
+      .contact-content-flex
+         .address-content
+            margin-right: 3rem
+
+         .map
+            +flex(1 0 auto)
+
+         .form
+            h2
+               text-align: left
+
+               span
+                  padding-left: 0px

@@ -1,0 +1,346 @@
+.lightbox
+   +position(fixed, 0px null null 0px)
+   +size(100%)
+   +display(none)
+   z-index: 1000
+   background-color: rgba(black, .35)
+   padding: 2rem 1.2rem
+   
+   &.active-lightbox
+      +display(block)
+   
+   .lb-container
+      +size(100% auto)
+      margin: auto
+      background-color: $section-main
+      border-radius: 3px
+      border: 1px solid $border
+      
+      &.rent-lb-container
+         max-width: 600px
+      
+      &.call-lb-container
+         max-width: 400px
+      
+      .lb-header-flex
+         +position(relative)
+         +display(flex)
+         +align-items(center)
+         padding: .6rem 1rem
+         background-color: $section-alt
+         border-bottom: 1px solid $border
+         
+         .lb-title
+            +flex(1 0 auto)
+            margin: 0px
+            font-size: 1.5rem
+         
+            span
+               padding-right: .2rem
+               
+         .close
+            +flex(0 0 28px)
+            +size(28px)
+            +position(relative)
+            margin-left: .8rem
+            cursor: pointer
+            border-radius: 50%
+            background-color: $section-alt
+            
+            &:before
+               content: ""
+               z-index: 1
+               +position(absolute, 50% 0px null null)
+               +size(100% 1px)
+               +transform(rotate(45deg))
+               background-color: darken($border, 30)
+               
+            &:after
+               content: ""
+               z-index: 1
+               +position(absolute, 50% 0px null null)
+               +size(100% 1px)
+               +transform(rotate(-45deg))
+               background-color: darken($border, 30)
+               
+            &:hover
+               background-color: rgba($border, .2)
+            
+               &:before
+                  background-color: $section-alt-darkblue
+            
+               &:after
+                  background-color: $section-alt-darkblue
+            
+      .lb-content
+         padding: 10px 10px
+         
+         
+         .call-lb-network-flex
+            +display(flex)
+            height: 233px
+            margin-bottom: 20px
+            +position(relative)
+            
+            &:before
+               content: ""
+               +size(1px 100%)
+               +position(absolute, 0px null null 50%)
+               background-color: $border
+
+            .call-lb-network-flexitem
+               +display(block)
+               +flex(0 0 50%)
+               +align-self(center)
+               padding: 1rem
+               text-align: center
+               
+               img
+                  max-width: 125px
+                  +size(80% auto)
+                  
+               p
+                  margin: 1rem 0px 0px
+
+         .call-lb-note
+            background-color: $section-main
+            border: 1px solid $border
+            padding: 7px 10px 10px
+            margin-bottom: 20px
+
+            p
+               line-height: 1.3
+               margin: 0px
+
+            .note-blurb
+               margin-left: 25px
+
+         .call-lb-phone
+            margin: 0px
+         
+         .rent-lb-flex
+            +display(flex)
+               
+            .rent-lb-form-map
+               +flex(1 1 400px)
+               +position(relative)
+               overflow: hidden
+               
+               .toggle-form-map
+                  +position(absolute, 8px 0px null null)
+                  +size(30px)
+                  background-color: $border
+                  border-radius: 50%
+                  cursor: pointer
+                  z-index: 10
+                  +transition()    
+                  
+                  &:before
+                     content: ""
+                     +position(absolute, 5px 9px null null)
+                     border:
+                        width: 10px 17px 10px 0px
+                        style: solid
+                        color: transparent $section-main
+                     +transition()
+                  
+                  &.toggled
+                     &:before
+                        +position(absolute, 5px null null 9px)
+                        border:
+                           width: 10px 0px 10px 17px
+                           style: solid
+                           color: transparent $section-main
+                     
+                  &:hover
+                     background-color: $section-alt-darkblue
+                        
+                  
+               .form-map-container
+                  +position(relative)
+                  +size(200% 400px)
+                                 
+                  .form
+                     margin-top: 27px
+                     +size(50% auto)
+                     float: left
+                     
+                     fieldset, label
+                        +display(block)
+                        border: 0px
+                        margin: 0px
+                        padding: 0px
+                        
+                        span
+                           font-weight: 300
+                           
+                     input, textarea
+                        border: 1px solid $border
+                        border-radius: 0px 3px 3px 0px
+                        padding: .5rem
+                        font-weight: 300
+                              
+                        &:focus
+                           outline: none                        
+                        
+                     label
+                        margin-bottom: 10px
+                        
+                     .selected
+                        +display(inline-block)
+                        padding: 4px 8px
+                        border: 1px solid $border
+                        border-radius: 2px
+                        +transition()
+                        margin: 0px 40px 0px 0px     
+                        width: auto
+                        
+                        &:hover
+                           background-color: rgba($section-alt-blue, .2)
+                        
+                     .customer-info-group                     
+                        label
+                           +display(flex)
+
+                           span
+                              +flex(0 0 auto)
+                              +display(block)
+                              padding: 2px 10px
+                              background-color: $section-alt
+                              border: 1px solid $border
+                              border-radius: 3px 0px 0px 3px
+                              border-right: 0px
+
+                           input
+                              +flex(1 0 auto)
+                              padding: 3px .5rem
+                              width: 50px
+                     
+                           input::-webkit-outer-spin-button, input::-webkit-inner-spin-button
+                              -webkit-appearance: none
+                              margin: 0
+                              
+                           input[type="number"]
+                              -moz-appearance: textfield
+                              
+                     .customer-message
+                        span
+                           +display(block)
+                              
+                        textarea
+                           +size(100% 11em)
+                           border-radius: 3px
+                           resize: none
+                           
+                     .submit
+                        [type='submit']
+                           float: right
+                           font-size: 1.1rem
+                           border-radius: 3px
+                           background-color: $section-main
+                           color: $section-alt-darkblue
+                           padding: .3rem 1rem .4rem
+                           font-weight: 400
+                              
+                           &:hover
+                              background-color: $section-alt-darkblue
+                              color: $section-main
+                              border-color: $section-alt-darkblue                     
+                     
+                  .map-flex
+                     +size(50% 100%)
+                     float: left
+                     +display(flex)
+                     +flex-direction(column)
+
+                     .address
+                        +flex(0 0 auto)
+                        margin: 0px 40px 0px 0px
+                        padding: 8px 0px
+                        min-height: 46px
+                        
+                     iframe
+                        +flex(1 1 auto)
+                        +display(block)
+
+                     .see-full-screen
+                        +flex(0 0 auto)
+                        +align-self(flex-end)
+                        margin-top: .5rem
+                        
+            .rent-lb-sidebar-flex
+               +flex(0 1 auto)
+               +display(flex)
+               +flex-direction(column)
+               +justify-content(center)
+               border-left: 1px solid $border
+               max-width: 100px
+               margin-left: 10px
+               padding: 10px 0px 10px 10px
+               +align-items(center)              
+               
+               .call, .email
+                  +display(block)
+                     
+               .call
+                  cursor: pointer
+                  +position(relative)
+                  margin-top: 2rem
+                  
+                  &:before
+                     content: ""
+                     +position(absolute, -.98rem -2px null -2px)
+                     height: 1px
+                     background-color: $border
+                     
+               img
+                  margin: 8px 0px
+                  +size(40px)
+                  
+                  
+@media screen and (min-width: 500px)                 
+   .lightbox
+      .lb-container
+         .lb-header-flex
+            padding: 1rem
+         
+            .lb-title
+               font-size: 1.6rem
+            
+            .close
+               +flex-basis(35px)
+               +size(35px)               
+         
+         .lb-content
+            .rent-lb-flex
+               .rent-lb-form-map
+                  .form-map-container
+                     .form
+                        .customer-info-group                     
+                           label
+                              span
+                                 padding: 3px 14px
+                                 
+                        .submit
+                           [type="submit"]
+                              font-size: 1.2rem
+                                 
+                        .customer-message
+                           textarea
+                              height: 8em
+                                 
+               .rent-lb-sidebar-flex  
+                  +flex-basis(80px)
+                  
+                  img
+                     margin: 5px 0px
+                     +size(50px)
+                     
+@media screen and (min-width: 768px)                 
+   .lightbox
+      .lb-container        
+         .lb-content
+            .rent-lb-flex
+               .rent-lb-sidebar-flex                    
+                  .call, .email
+                     +display(none)

@@ -1,0 +1,141 @@
+#header
+   +position(relative)
+   z-index: 2
+   
+   .container-nav
+      background-color: $section-alt-peach
+      border-bottom: 1px solid rgba($section-alt-blue, 1)
+      margin: 0 auto
+
+      .nav-container
+         +display(block) 
+
+         .nav-banner
+            +position(relative)
+            +display(flex)
+            padding: 16px 0px 10px
+            +justify-content(center)
+
+            a
+               margin-top: 1px
+               padding: 2px 0px
+               height: 48px
+               +display(block)    
+                  
+               svg
+                  fill: $section-alt-darkblue
+                  +size(auto 100%)
+
+         .nav-main
+            +flex-shrink(0)
+            +display(flex)
+            +position(relative)
+            +align-items(center)
+            +size(100% auto)
+            +justify-content(center)
+            
+            .home
+               +display(none)
+
+            .nav-item
+               color: $section-alt-darkblue
+               +position(relative)
+               padding: 3px 7px
+               border-bottom: 2px solid transparent
+               border-top: 3px solid transparent
+               
+               &.current
+                  color: $section-alt-darkblue
+                  border-bottom: 2px solid $section-alt-blue
+   
+               
+@media screen and (min-width: 500px)  
+   #header .container-nav .nav-container .nav-main .home
+      +display(block)
+
+@media screen and (min-width: 768px) 
+   #header
+      +position(absolute, 0px 0px null 0px)
+   
+      .container-nav
+         background-color: transparent
+         border-bottom: 0px
+         width: 750px
+      
+         .nav-container  
+            +display(flex)
+            +justify-content(flex-end)
+            
+            &:before
+               content: ""
+               z-index: -1
+               +size(30% 52px)
+               +position(absolute, 0px 0px null null)
+               background-color: $section-main
+               border-bottom: 2px solid $section-alt-peach     
+
+            .nav-banner
+               +flex-shrink(0)
+               padding: 0px
+               background-color: $section-alt-peach
+         
+               &:before
+                  content: ""
+                  z-index: -1
+                  +position(absolute, null 0px null -60px)
+                  border: 
+                     width: 52px 0px 0px 60px
+                     style: solid
+                     color: $section-alt-peach null null transparent
+               
+            
+            .nav-main
+               +justify-content(flex-end)
+               +size(500px 50px)
+            
+               &:before
+                  content: ""
+                  z-index: -1
+                  +position(absolute, 0px 0px null null)
+                  +size(inherit)
+                  border: 
+                     width: 50px 0px 0px 60px
+                     style: solid
+                     color: $section-main null null transparent    
+
+               &:after
+                  content: ""
+                  z-index: -2
+                  +position(absolute, 0px 0px -2px 0px)
+                  background-color: $section-alt-peach
+         
+               .about
+                  +display(block)
+                  
+               .nav-item
+                  color: $p-color
+                  padding: 9px 20px
+                  border-bottom-width: 3px
+                  
+                  &.current
+                     background-color: rgba($section-alt-blue, .3)
+                     border-bottom: 3px solid $section-alt-peach
+                  
+                  &:hover
+                     color: $section-alt-darkblue
+                     border-bottom-color: $section-alt-peach
+
+@media screen and (min-width: 992px)
+   #header .container-nav
+      width: 980px
+
+      .nav-container .nav-main
+         width: 600px
+
+@media screen and (min-width: 1200px)
+   #header .container-nav
+      width: 1170px
+
+      .nav-container .nav-main
+         width: 750px
+

@@ -1,0 +1,145 @@
+.post-container
+   margin-left: 1.2rem
+   margin-right: 1.2rem
+   padding: 3rem 0px
+   background-color: $section-main
+   border:
+      width: 0px 1px 
+      style: solid
+      color: rgba($section-alt-blue, 1)
+
+   .post-container-flex
+      +display(flex)
+      +flex-wrap(wrap-reverse)
+      +size(100% auto)
+      max-width: 440px
+      margin: 0px auto
+      border:
+         width: 0px 0px 1px
+         style: solid
+         color: $section-alt-blue
+      
+      .post-text-flex
+         +flex(1 0 auto)
+         +position(relative)
+         padding: 1rem
+         background-color: $section-alt
+
+         .post-text
+            +flex(1 1 auto)
+
+            h2
+               margin: 0px -1rem 1rem
+               
+               span
+                  background-color: $section-alt
+
+            p
+               color: $section-alt-darkblue
+               margin-bottom: 0px
+
+         .rent-this-car
+            +position(relative)
+            +flex(0 0 100px)
+            +display(block)
+            margin-top: 1rem
+            background-color: $rent-now
+            padding: .8rem 0px
+            text-align: center
+            border: 1px solid $border
+            color: $section-alt-darkblue
+            text-transform: uppercase
+            +transition()
+
+      .post-img
+         +flex(1 1 auto)
+         max-width: 786px
+         overflow: hidden
+         height: 280px
+         padding: 0px
+         white-space: nowrap
+         padding: 1rem
+         text-align: center
+         border-bottom: 1px solid $section-alt-blue
+
+         &:before
+            content: ""
+            height: 100%
+            vertical-align: middle
+            +display(inline-block)               
+
+         img
+            vertical-align: middle
+            max-height: 100%
+            max-width: 100%
+            
+            
+@media screen and (min-width: 500px)
+   .post-container
+      .post-container-flex
+         border: 1px solid $section-alt-blue
+
+         .post-text-flex
+            .post-text
+               h2
+                  margin: 0px -1rem 1.5rem
+
+            .rent-this-car
+               padding: 1rem 0px
+               
+@media screen and (min-width: 768px)
+   .post-container
+      padding: 3rem 1rem
+      margin: 0px auto
+      
+      .post-container-flex
+         +flex-wrap(nowrap)
+         max-width: none
+         float: left
+         margin: 0
+         margin-right: 30px
+         border: 0px
+
+         .post-text-flex
+            +flex(0 0 350px)
+            +display(flex)
+            +flex-direction(column)
+            padding: 0
+            padding-right: .5rem
+            background-color: transparent
+            border: 0px
+            
+            .post-text               
+               h2
+                  margin: 0px 0px 1rem
+                  
+                  span
+                     background-color: $section-main
+               
+            .rent-this-car
+               background-color: $section-alt
+               padding: 2rem 0px
+               
+               &:hover
+                  border: 1px solid rgba($section-alt-darkblue, .6)
+                  background-color: $rent-now
+               
+         .post-img
+            height: 350px
+            background-color: $section-alt
+            border: 1px solid $border
+
+@media screen and (min-width: 992px)
+   .post-container      
+      .post-container-flex
+         .post-text-flex
+            padding-right: 1rem
+               
+@media screen and (min-width: 1200px)
+   .post-container      
+      .post-container-flex
+         .post-text-flex
+            +flex-basis(420px)
+            
+         .post-img
+            height: 400px

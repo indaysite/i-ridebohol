@@ -1,0 +1,414 @@
+.about-container
+   background-color: $section-main
+   margin: 0px 1.2rem -2rem
+   
+   border: 
+      width: 0px 1px
+      style: solid
+      color: $section-alt-blue
+      
+   .about-content-flex
+      +display(block)
+      margin-bottom: 2rem
+      
+      .about-sidebar   
+         border: 1px solid $border
+         text-align: center
+         
+         .about-sidebar-title
+            padding: 7px
+            +display(block)
+            line-height: 1.4
+            text-transform: uppercase
+            border-bottom: 1px solid $border
+            margin-bottom: 0px
+            background-color: $section-alt-peach
+         
+         
+      .about-detail-flex
+         +display(block)
+         
+         .about-detail-blurb
+            margin: 2rem 6%
+            text-align: center            
+            
+            strong
+               font-weight: 400
+               color: $section-alt-darkblue
+         
+         .about-detail-office-info
+            width: 100%
+            +position(relative)
+            padding: 7px
+            border: 1px solid $border
+            margin-bottom: 2rem
+            overflow: hidden
+            
+            .overflow-hidder
+               overflow: hidden
+            
+               .info-map-container
+                  +position(relative)
+                  width: 200%
+
+                  .info           
+                     float: left
+                     width: 50%
+
+                     .sub-title
+                        +position(relative)
+                        padding-left: 15px
+                        margin-bottom: 1.2rem
+                        color: $section-alt-darkblue
+
+                        &:before
+                           content: ""
+                           width: 5px
+                           +position(absolute, 0px null 0px 5px)
+                           border:
+                              width: 7px 0px 7px 5px
+                              style: solid 
+                              color: transparent $section-alt-peach
+
+                        &:after
+                           content: ""
+                           width: 5px
+                           +position(absolute, 0px null 0px 0px)
+                           background-color: $section-alt-peach
+                           border-left: 2px solid $border
+
+
+                     .about-detail-office-info-flex
+                        +display(block)
+
+                        .office-info-flexitem
+                           margin-bottom: 0px
+
+                           .office-hour
+                              +display(inline)
+
+                        .office-day
+                           +display(none)
+
+                     .about-detail-available
+                        margin: 1rem 0px 0px
+
+                  .map
+                     width: 50%
+                     height: 0px
+                     float: left
+                     text-align: right
+                     +transition(1s)                     
+                     
+                     &.active-map
+                        height: 500px
+
+                     iframe
+                        +size(100% 470px)
+                     
+                  
+            .toggle-info-map
+               +position(absolute, 7px 7px null null)
+               padding: 0px 0px 3px 3px
+               border-radius: 0px 0px 0px 2px
+               background-color: $section-main
+               
+               > span
+                  float: left
+                  cursor: pointer
+                  +position(relative)
+                     
+                  &.toggled
+                     &:before
+                        content: ""
+                        +position(absolute, -5px 0px null 0px)
+                        height: 2px
+                        background-color: $border
+                  
+                  img
+                     +size(28px auto)
+               
+               .info-nav        
+                  margin-right: 8px
+                  
+               
+      .about-why ul
+         list-style-type: none
+         padding: 7px 9px
+         +display(block)
+         margin-bottom: 0px
+         text-align: left
+
+         li
+            +position(relative)
+            padding-left: 18px
+            line-height: 1.5
+            font-weight: 300
+            margin-bottom: .2rem
+
+            &:before
+               content: ""
+               background:
+                  image: url('../img/check.png')
+                  size: 50%
+                  repeat: no-repeat
+                  position: left top
+               +position(absolute, .3rem null 0px 0px)
+               +size(25px 100%)
+               
+   
+      .about-info-flex
+         +display(block)
+         padding-right: 0px
+         
+         .about-info-flexitem 
+            text-align: center
+            padding: 0px
+            margin-bottom: 2rem
+               
+            .sub-content-flex
+               +display(flex)
+               +justify-content(center)   
+                  
+               p
+                  margin: 0px .5rem 0px 0px
+                  +align-self(center)
+               
+               .cta
+                  +display(block)
+                  padding: 3px 5px
+                  background-color: #ffd24d
+                  border-radius: 3px
+                  +size(auto 44px)
+
+                  svg
+                     +size(auto 100%)
+                     fill: #1b4145
+
+         .about-info-social
+            +flex(1 0 100%)
+            text-align: center
+            margin-bottom: 2rem
+
+            a
+               margin: 0px 4px
+
+               img
+                  +size(50px) 
+
+
+      .about-fb-likebox
+         iframe
+            +size(100% 222px)
+            
+@media screen and (min-width: 500px)   
+   .about-container
+      .about-content-flex
+      
+         .about-sidebar
+            .about-sidebar-title
+               padding: 10px
+               
+         .about-detail-flex
+            .about-detail-office-info
+               padding: 10px
+            
+               .toggle-info-map
+                  top: 10px
+                  right: 10px
+            
+               .overflow-hidder
+                  .info-map-container
+                     .info      
+                        .sub-title
+                           &:before
+                              border:
+                                 width: 9px 0px 9px 5px
+
+         .about-why ul
+            +display(inline-block)
+            padding: 8px 10px
+            
+            li
+               padding-left: 20px
+               margin-bottom: .3rem
+                  
+               &:before
+                  background-size: 56%
+                  top: .35rem
+            
+@media screen and (min-width: 768px)
+   .about-container
+      margin: 0px auto -2rem
+
+      .about-content-flex
+         .about-sidebar   
+            .about-sidebar-title
+               padding: 15px
+               text-align: left
+
+         .about-detail-flex
+            .about-detail-blurb
+               margin: 2rem 0px
+               text-align: left
+
+            .about-detail-office-info
+               padding: 15px
+               
+               .overflow-hidder
+                  .info-map-container
+                     .info    
+                        .about-detail-office-info-flex
+                           +display(flex)
+                           +flex-wrap(nowrap)
+                           margin-right: 70px
+
+                           .office-info-flexitem
+                              +align-self(flex-start)
+                              +flex(1 1 auto)
+                              text-align: center
+                              border-left: 1px solid $border
+
+                              .office-hour
+                                 +display(none)
+
+                           .office-address
+                              text-align: left
+                              border-left: 0px
+
+                           .office-day
+                              +display(block)
+
+               .toggle-info-map
+                  +position(absolute, 10px 10px null null)
+                  padding: 0px 0px 5px 5px
+                  
+                  > span         
+                     &:hover                  
+                        &:before
+                           content: "" 
+                           +position(absolute, -5px 0px null 0px)
+                           height: 2px
+                           background-color: $border
+                     
+                     img
+                        +size(33px auto)
+
+         .about-why ul
+            padding: 15px
+            +display(block)
+            text-align: left  
+            
+            li            
+               +flex-basis(50%)
+               padding-left: 22px
+
+         .about-info-flex
+            +align-self(center)
+            +display(flex)
+            +flex-wrap(wrap)
+
+            .about-info-flexitem 
+               +flex-basis(50%)
+               padding: 2rem 1rem
+               margin-bottom: 0px
+               
+               .sub-content-flex
+                  .cta
+                     +display(none)
+
+            .contact-no
+               border-right: 1px dashed $border
+
+            .about-info-social
+               +flex(1 0 100%)
+               border-top: 1px dashed $border
+               padding: 2rem 1rem
+               margin-bottom: 0px
+
+               a
+                  margin: 0px 2px
+
+@media screen and (min-width: 992px)
+   .about-container
+      margin-bottom: -2rem
+
+      .about-content-flex
+         +display(flex)
+         +flex-wrap(nowrap)
+
+         .about-sidebar
+            +flex(0 0 362px)       
+            text-align: center
+
+            .about-sidebar-title
+               padding: 20px
+               text-align: center
+
+         .about-detail-flex
+            +flex(1 1 auto)
+            +display(flex)
+            +flex-direction(column)
+            margin-right: 1rem
+
+            .about-detail-blurb
+               +flex-grow(1)
+               margin: .5rem 0px 3rem
+               padding-right: 2rem
+
+            .about-detail-office-info
+               +align-self(flex-end)
+               padding: 20px
+               margin-bottom: 0px
+
+               &:before
+                  content: ""
+                  width: 5px
+                  +position(absolute, 0px null 0px 0px)
+                  background-color: $section-alt-peach
+            
+               .overflow-hidder
+                  .info-map-container
+                     .info   
+                        .about-detail-office-info-flex
+                           .office-info-flexitem
+                              +align-self(flex-start)
+                  
+         .about-why
+            +align-self(flex-start)
+               
+            ul
+               padding: 10px 12px
+               
+               li
+                  padding-left: 21px
+
+         .about-info-flex
+            +flex(1 1 auto)
+            padding-right: 1rem
+
+            .about-info-flexitem 
+               padding: 2rem 1rem
+
+            .about-info-social
+               a
+                  margin: 0px 4px
+
+                  img
+                     +size(60px) 
+                     margin: 2px
+                     +transition()
+
+                  &:hover
+                     img
+                        margin: 0px
+                        +size(64px)
+
+         .about-fb-likebox iframe
+            padding: 10px
+            +size(100% 300px)
+
+            
+            
+            
+            

@@ -1,0 +1,118 @@
+#footer
+   z-index: 1
+   +position(relative)
+   background-color: $section-alt-darkblue
+
+   .container
+      .footer-container-flex
+         +display(flex)
+         +flex-wrap(wrap)
+         +justify-content(space-between)
+         padding: 0px
+
+         .f-item
+            +flex(0 0 49%)
+            margin-right: 0px
+
+            .sub-items
+               list-style-type: none
+               padding: 0px
+               text-align: center
+
+               .sub-item
+                  +position(relative)
+                  margin-left: 15px
+                  color: $section-alt
+                  +display(block)
+                  margin-right: 15px
+
+                  a
+                     +display(inline-block)
+                     color: $section-alt
+                     border-bottom: 1px dotted transparent
+                     line-height: 1.1
+                     margin-bottom: .2rem
+
+                     &:hover
+                        border-bottom-color: $section-alt
+
+         .fb-comment
+            +flex(0 0 100%)
+            margin-bottom: 2rem
+            height: 100%
+            
+            .fb-comment-container
+               height: 280px
+               overflow-y: auto
+               border-radius: 2px
+               padding: 10px 5px
+               background-color: $section-main
+               
+               .fb-comments, .fb-comments *
+                  width: 100% !important
+
+#copyright
+   background-color: $section-alt
+
+   .copyright-container
+      padding: .6rem 0px
+      text-align: center
+
+      p
+         color: $section-alt-darkblue
+         margin: 0px
+
+@media screen and (min-width: 470px)
+   #footer
+      .container
+         .footer-container-flex
+            .f-item                        
+               .sub-items
+                  .sub-item
+                     +display(inline-block)
+                     width: 100%
+
+@media screen and (min-width: 768px)
+   #footer
+      .container
+         .footer-container-flex
+            .f-item
+               &:last-of-type
+                  margin-right: 0px
+
+                  span
+                     padding-left: 0px
+
+               .sub-items
+                  text-align: left
+
+                  .sub-item
+                     +display(block)
+                     
+                     &:before
+                        content: ""
+                        +display(block)
+                        +size(5px)
+                        border: 1px solid $section-alt
+                        border-radius: 50%
+                        +position(absolute, 11px null null -14px)           
+            
+
+@media screen and (min-width: 992px)
+   #footer
+      .container
+         .footer-container-flex
+            +flex-wrap(nowrap)
+
+            .f-item
+               +flex(1 0 auto)
+               margin-right: 3rem
+
+            .fb-comment
+               +flex(0 0 520px)
+               margin-bottom: 0px
+               
+               .fb-comment-container
+                  height: 170px
+
+            

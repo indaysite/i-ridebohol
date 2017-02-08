@@ -1,0 +1,419 @@
+#slide
+   +size(100% 460px)
+   +position(relative)
+   background-color: $section-alt
+   z-index: 1
+   overflow: hidden
+   
+   .slide-container
+      +position(relative)
+      +size(100%)
+      z-index: 1
+      
+      .slide-item
+         +display(none)
+         +position(absolute, null null null 0px)
+         +size(100%)
+         overflow: hidden
+         padding: 1rem 0px
+         
+         &:before
+            content: ""
+            +position(absolute, -100px -100px -100px -100px)
+            background-image: url('../img/slide-bg.jpg')
+            background-size: cover
+            background-repeat: no-repeat
+            +transform(skew(10deg))
+            
+         &.reserve-slide
+            z-index: 1
+            +display(block)
+            
+         &.active-slide
+            z-index: 2
+            +display(block)
+            
+         .slide-item-container-flex
+            +position(relative)
+            height: 100%
+            +display(block)
+                              
+            .slide-img
+               padding: 14.5rem 15px 0px
+               max-width: 400px
+               height: 400px
+               margin: 0px auto
+               white-space: nowrap
+               text-align: center
+               opacity: 1
+               +transition(1s)
+               
+               &:before
+                  content: ""
+                  +display(inline-block)
+                  height: 100%
+                  vertical-align: middle
+               
+               img
+                  vertical-align: middle
+                  max-width: 100%
+                  max-height: 100%
+               
+            .slide-body               
+               margin: 0px
+               border-radius: 5px 0px 0px 5px
+               background-color: rgba(black, .5)
+               padding: 8px
+               +align-self(flex-start)
+               +flex(0 0 auto)
+               +position(absolute, 1rem 0px null null)
+               border: 
+                  width: 1px 0px 1px 1px 
+                  style: solid
+                  color: $section-main                     
+               
+               .open-quote, .close-quote
+                  +display(none)
+                  +size(55px)
+                     
+                  svg
+                     +size(100%)
+                     fill: rgba(white, .3)
+                     
+               .open-quote
+                  +position(absolute, -15px null null -60px)
+                  +transform(rotate(180deg))
+                     
+               .close-quote
+                  +position(absolute, null -50px -15px null)
+                  +transform(rotate(0deg))      
+               
+               .slide-header-flex
+                  +display(flex)
+                  text-transform: uppercase
+                  
+                  .slide-title
+                     text-align: left
+                     padding-right: 15px
+                     
+                     > *
+                        color: white
+                        line-height: .9
+                        margin-bottom: 0px
+                        
+                  .slide-cta
+                     width: 130px
+                     text-align: center
+                     
+                     .rent-now-slide
+                        @extend .rent-now
+                        +display(inline-block)
+                        padding: 13px 0px
+                        background-color: $rent-now
+                        color: $section-alt-darkblue
+                        border: 2px solid $section-alt-darkblue
+                        border-radius: 4px
+                        +transition()
+                        
+                        &:hover
+                           border-color: $rent-now
+                           background-color: $section-alt-darkblue
+                           color: $rent-now
+                        
+               .slide-desc
+                  margin-top: 1rem
+                  
+                  .slide-price
+                     font-size: 1.4rem
+                  
+                  p
+                     color: white
+                     font-size: 20px
+                     font-weight: 400
+                     margin-bottom: 0px
+                        
+            @media screen and (max-width: 1200px)
+               .slide-body
+                  .slide-header-flex   
+                     .slide-title
+                        .car-model
+                           font-size: 3rem
+
+                        .car-brand
+                           font-size: 2rem
+                           
+                     .slide-cta
+                        width: 100px
+                        
+                        .rent-now-slide
+                           padding: 9px 0px
+                           
+                  .slide-desc
+                     margin-top: 1rem
+                     
+                     p
+                        font-size: 1rem
+                        
+            @media screen and (max-width: 768px)
+               .slide-body
+                  .slide-header-flex
+                     +justify-content(space-between)
+                        
+                     .slide-title
+                        .car-model
+                           font-size: 2.6rem
+                           margin-bottom: 4px
+                           
+                        .car-brand
+                           font-size: 1.6rem
+                           
+                     .slide-cta
+                        width: 90px
+                        
+                        .rent-now-slide
+                           border-width: 1px
+                           padding: 5px 0px
+                           
+                  .slide-desc
+                     margin-top: .8rem
+                        
+                     p
+                        line-height: 1.3
+                           
+                     
+   .thumb-container
+      z-index: 2
+      padding: 0px 6px
+      +position(absolute, null 0px 0px 0px)
+      
+      &:before
+         +display(none)
+
+      .thumb-wrapper
+         max-width: 1170px
+         width: auto
+         margin: 0px auto
+         +position(relative)
+         padding: 0px 0px .7rem
+         +display(flex)
+         +flex-wrap(nowrap)
+         +justify-content(center)
+
+         .thumb-item
+            +size(18px)
+            border-radius: 50%
+            padding: 5px
+            margin: 0px 3px
+            +position(relative)
+            cursor: pointer
+            background-color: transparent
+            border: 2px solid $section-main
+            margin: 0px .4rem
+            
+            &.active-thumb
+               border-color: $section-main
+               
+               &:before
+                  content: ""
+                  z-index: 1
+                  border-radius: 50%
+                  +position(absolute, 3px 3px 3px 3px)
+                  background-color: $section-main
+               
+            &.disable-thumb
+               pointer-events: none
+
+            .thumb-img
+               +display(none)
+               
+@media screen and (min-width: 500px)   
+   #slide
+      height: 505px
+
+      .slide-container
+         .slide-item
+            .slide-item-container-flex
+               .slide-img
+                  padding-top: 10.4rem
+      
+      .thumb-container
+         background-color: rgba($section-alt-blue, .5)
+
+         .thumb-wrapper
+            height: 72px
+            padding: 4px 0px
+            +justify-content(flex-start)
+
+            .thumb-item
+               +size(auto 64px)
+               margin: 0px 3px
+               border-radius: 3px
+               border: 0px
+               background-color: white
+
+               &.active-thumb
+                  &:before
+                     border-radius: 5px
+                     +position(absolute, -6px -3px 0px -3px)
+                     background-color: transparent
+                     border:
+                        width: 2px 0px 0px 0px
+                        style: solid 
+                        color: rgba($section-alt-blue, .6)
+
+               .thumb-img
+                  +display(block)
+                  margin: 0px auto
+                  max-height: 100%
+                  max-width: 100%
+               
+@media screen and (min-width: 768px)
+   #slide      
+      margin-top: 0px
+      height: 550px
+      
+      .slide-container .slide-item
+         +transform(skew(-10deg))
+         left: -60px
+         border: 
+            width: 0px 40px 8px 0px
+            style: solid
+            color: $section-alt-blue
+         
+         .slide-item-container-flex
+            +display(flex)
+            +flex-wrap(no-wrap)
+            +transform(skew(10deg))
+            +justify-content(center)
+            +align-items(flex-start)
+            padding: 100px 0px 50px
+         
+            .slide-img
+               max-width: none
+               padding: 0px
+               height: initial
+               +flex(0 0 350px)
+               margin: 4.5rem 0px 0px .7rem
+            
+            .slide-body
+               border: 0px
+               border-radius: 0px
+               background-color: transparent
+               padding: 0px
+               +flex(0 0 auto)
+               margin: -5rem 0px 0px 0px
+               +position(relative)
+               top: 100px
+                                 
+               .open-quote, .close-quote
+                  +display(block)
+                     
+                  svg
+                     +size(60px)
+                     
+               .open-quote
+                  left: -55px
+                  top: -12px
+                  
+               .close-quote
+                  bottom: -15px
+                  right: -40px
+                  
+               .slide-header-flex .slide-title
+                  text-align: center
+                  padding-right: 30px
+                  
+               .slide-desc
+                  margin-top: 2rem
+                     
+      .thumb-container
+         padding: 0px 1rem
+         bottom: 8px
+         background-color: transparent
+         
+         &:before
+            content: ""
+            +display(block)
+            +position(absolute, null null null -138px)
+            +size(100%)
+            +transform(skew(-10deg))
+            background-color: rgba($section-alt-blue, .6)
+         
+         .thumb-wrapper
+            +flex-wrap(no-wrap)
+            height: 90px
+            padding: 6px 0px
+            
+            .thumb-item
+               +flex-grow(0)
+               height: 78px
+               
+               &.active-thumb
+                  &:before
+                     top: -9px
+                     left: -5px
+                     right: -5px
+                     border-top-width: 3px
+
+@media screen and (min-width: 920px)
+   #slide
+      height: 630px
+      
+      .slide-container .slide-item 
+         .slide-item-container-flex 
+            padding: 150px 0px 100px
+            +align-items(center)
+         
+            .slide-img
+               margin-top: 0px
+               margin-left: 1rem
+               +flex-basis(500px)    
+            
+            .slide-body
+               margin-left: -1rem
+               margin-top: -7rem
+               
+      .thumb-container
+         &:before
+            left: -145px
+               
+@media screen and (min-width: 1200px)
+   #slide
+      
+      .slide-container .slide-item .slide-item-container-flex
+         
+         .slide-img
+            margin-left: 0px
+            +flex-basis(650px)
+
+         .slide-body      
+            .open-quote
+               left: -60px
+               top: 0px
+
+            .close-quote
+               bottom: 0px
+               right: -30px
+
+            .open-quote, .close-quote
+               svg
+                  +size(80px)
+               
+            
+         
+         
+
+
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+               
+               

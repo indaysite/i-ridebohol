@@ -1,0 +1,105 @@
+.page
+   background-image: url('../img/slant-bg.png')
+   background-repeat: repeat
+   
+   .breadcrumb
+      z-index: 1
+      +size(100% auto)
+      +position(relative)
+      background-color: $section-alt
+      border-bottom: 1px solid $section-alt-blue
+
+      .breadcrumb-container
+         padding: .15rem .5rem .1rem
+            
+         ul
+            list-style-type: none
+            padding: 0px
+            margin: 0px
+            
+            span
+               +display(none)
+            
+            .home               
+               ~ *
+                  padding-left: 7px
+               
+                  &:before
+                     content: "›"
+                     color: $p-color
+                     font-weight: 300
+                     +position(absolute, null null null -.2rem)
+                  
+            li
+               +position(relative)
+               +display(inline-block)
+               padding: 0px .2rem
+               
+               &.active
+                  a
+                     color: $section-alt-darkblue
+                  
+               a
+                  font-size: .9rem
+                  border-bottom: 1px dotted transparent
+
+                  &:hover
+                     border-color: $section-alt-darkblue
+               
+                  
+@media screen and (min-width: 500px)
+   .page .breadcrumb .breadcrumb-container
+      padding: .4rem .5rem .3rem      
+
+@media screen and (min-width: 768px)
+   .page 
+      .breadcrumb
+         +size(100% auto)
+         padding-top: 52px
+         border-bottom: 0px
+         background-color: initial
+         
+         &:before
+            content: ""
+            +position(absolute, 0px null null 0px)
+            +size(50% 90%)
+            background-color: $section-alt
+
+         .breadcrumb-container
+            overflow: visible                     
+               
+            &:before
+               content: ""
+               z-index: -2
+               border-top: 39px solid $section-alt-blue
+               border-right: 34px solid transparent
+               +position(absolute, 0px -33px 0px -100%)
+            
+            &:after
+               content: ""
+               z-index: -1
+               border-top: 38px solid $section-alt
+               border-right: 33px solid transparent
+               +position(absolute, 0px -32px 0px -100%)   
+            
+            ul
+
+               span
+                  +display(inline)
+                  font:
+                     size: .9rem
+                     weight: 300    
+
+               .home
+                  margin-left: .2rem
+
+                  ~ *
+                     padding-left: 12px
+                     &:before
+                        content: "›"
+                        color: $p-color
+                        font-weight: 300
+                        +position(absolute, null null null -.2rem)
+
+               li
+                  padding: 0px .5rem

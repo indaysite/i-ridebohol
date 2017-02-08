@@ -1,0 +1,109 @@
+.related-post-container
+   margin-top: 3rem
+   +size(100% auto) 
+   +position(relative, 0px 0px null null)
+   z-index: 1
+   float: right
+
+   .related-post-flex 
+      +display(flex)
+      +flex-wrap(wrap)
+      +justify-content(center)
+      margin: 0px 
+
+      .related-post
+         +flex(0 1 48%)
+         +position(relative)
+         text-align: center
+         overflow: hidden
+         +transition()
+         text-align: center
+         margin: 0px 2px
+
+         .related-post-img
+            height: 100px
+            overflow: hidden
+            white-space: nowrap
+
+            &:before
+               content: ""
+               height: 100%
+               vertical-align: middle
+               +display(inline-block)
+
+            img
+               vertical-align: middle
+               +size(80% auto)
+               +transition()
+
+         .car-name
+            +position(relative)
+            text-transform: uppercase
+            background-color: $section-alt
+            padding: 0px .5rem
+            border: 1px solid $border
+            +transition()
+            width: 100%
+            +display(block)
+            
+            .car-brand
+               +display(none)
+   
+@media screen and (min-width: 500px)
+   .related-post-container
+      .related-post-flex 
+         margin: 0px 2px
+
+         .related-post
+            +flex(0 1 32%)
+
+@media screen and (min-width: 768px)
+   .related-post-container
+      .related-post-flex 
+         +justify-content(flex-start)
+         margin: 1.5rem -3px -6px -3px
+
+         .related-post
+            +flex(0 0 234px)
+            +display(block)
+            padding: 1rem 0px
+            border: 1px solid $border
+            margin: 0px 3px 6px
+
+            .related-post-img
+               height: 150px
+
+            .car-name
+               +position(absolute, null 0px 0px null)
+               border-right: 0px
+               margin-bottom: .3rem
+               width: auto
+               
+               .car-brand
+                  +display(inline-block)
+
+            &:hover
+               background-color: $section-alt
+
+               .related-post-img img
+                  width: 83%
+
+               .car-name
+                  background-color: $section-main
+
+@media screen and (min-width: 992px)
+   .related-post-container
+      .related-post-flex 
+         .related-post
+            +flex(0 0 311px)
+
+            .car-name
+               padding: .1rem 1rem
+
+
+@media screen and (min-width: 1200px)
+   .related-post-container
+      .related-post-flex 
+         .related-post
+            +flex(0 0 279px)
+
