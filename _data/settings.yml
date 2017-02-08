@@ -1,0 +1,47 @@
+# Site Settings
+lang: 'en'
+author: AEdesign-bohol
+title: I-Ride Bohol
+subtitle: Car & Van & Motorcycle for Rent
+description: Vehicles for rent
+keywords: 'van for rent, van in bohol, car for rent, car in bohol, motorcycle for rent, motorcycle in bohol, rent vehicles in bohol, vehicles for rent,'
+
+# Site Info
+email: iridebohol@gmail.com
+website: iride-bohol.com
+address: 'Pier, Front of Basna Block - 2<br />Tagbilaran City, 6300<br />Bohol, Philippines'
+phone: soon
+mobile:
+ smart: 09107074113
+ globe: 09483556313
+
+# Site Content
+hero:
+ title: 'Why choose our cars?'
+ blurb: 'Welcome to <strong>I-Ride Bohol Car &amp; Van &amp; Motorcycle Rentals 24 Hours Services</strong> and you are very welcome to BOHOL :&#41;. We will be delighted to be of service and cater your needs while exploring our beautiful Island of Bohol. This is a family-owned company and is composted of smart &amp; professional team from out communication team to our presentable drivers.'
+
+social:
+- {name: Facebook, url: 'https://www.facebook.com/I-Ride-Bohol-1388552207842674/', img: 'fb.png'}
+- {name: Twitter, url: 'https://twitter.com/iridebohol', img: 'twitter.png'}
+- {name: Instagram, url: 'https://www.instagram.com/iridebohol', img: 'insta.png'}
+
+menu: 
+- {name: Car Rental, url: 'rent-list'}
+- {name: About, url: 'about'}
+- {name: Contact Us, url: 'contact'}
+- {name: Privacy Policy, url: 'privacy-policy'}
+
+advantages:
+- {name: 'Unlimited Mileage'}
+- {name: 'Clean and Latest Model Vehicles'}
+- {name: 'Online Reservation'}
+- {name: 'E-mails replied to fast within 12 hrs (In English or Filipino)'}
+- {name: 'Highly Competitive Prices'}
+- {name: '5% Discount for all repeat customers!'}
+- {name: 'If the car is badly damaged and off the road we DO NOT charge you a single peso for the days it is being repaired.'}
+
+map: 'https://www.google.com/maps/d/embed?mid=1qQGFhnu7rIjOiVWARcxSj2sxw1E'
+
+form-action: 'https://formspree.io/'
+
+fb-likebox: '<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FI-Ride-Bohol-Rent-a-Car-1388552207842674&tabs=timeline&width=340&height=222&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>'

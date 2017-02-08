@@ -1,0 +1,32 @@
+---
+layout: page
+---
+
+<section class='container post-container'>   
+   
+   <div class='post-container-flex'>      
+      <div class='post-text-flex'>
+         <div class='post-text'>
+            <h2 class='post-title-size content-title text-left'><span>{{page.brand}} {{page.model}}</span></h2>
+            <p class='brand'>Brand: {{page.brand}}</p>
+            <p class='model'>Model: {{page.model}}</p>
+            {% if page.color %}
+            <p class='color'>Color: {{page.color}}</p>
+            {% endif %}
+            {% if page.seat-cap %}
+            <p class='setting-cap'>Seating Cap.: {{page.seat-cap}}</p>
+            {% endif %}
+            <p class='transm'>Transmission: {{page.transm}}</p>
+            <p class='price'>RATE: P {{page.price-day}}/ DAY</p>
+            
+         </div>
+         <a href='#' class='rent-now rent-now-onpage rent-this-car' data-model='{{page.model}}'>rent this {{page.category}}</a>
+      </div>
+
+      <div class='post-img'>
+         <img src='{{site.baseurl}}/assets/img/for-rent/{{page.img}}' alt='Photo of {{page.brand}} {{page.name}} in {{site.data.settings.title}}'>
+      </div>      
+   </div>
+   
+   {% include related-post.html %}
+</section>

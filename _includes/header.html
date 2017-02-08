@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang='{{site.data.settings.lang}}'>
+<head>
+   <meta charset='utf-8'>   
+   <title>{% if page.layout == 'post' %}{{page.title}} for Rent · {% elsif page.layout == 'page' %}{{page.title}} · {% endif %}{{site.data.settings.title}}{% if page.titleAfter %} · {{page.titleAfter}}{% endif %}</title>   
+   <meta name='description' content="{%if page.layout == 'post' %}{{site.data.settings.title}} {{site.data.settings.subtitle}} {{page.title}} with Color of {{page.color}} & Transmission is {{page.transm}}{% elsif page.layout == 'page' %}{{page.title}} of {{site.data.settings.title}} {{site.data.settings.subtitle}}{% else %}{{site.data.settings.title}} {{site.data.settings.subtitle}}{% endif %}">
+   <meta name='keywords' content="{%if page.layout == 'post' %}{{site.data.settings.title}} {{site.data.settings.subtitle}} {{page.title}} with Color of {{page.color}} & Transmission is {{page.transm}}{% elsif page.layout == 'page' %}{{page.title}} of {{site.data.settings.title}} {{site.data.settings.subtitle}}{% else %}{{site.data.settings.title}} {{site.data.settings.subtitle}}{% endif %}, {{site.data.settings.keywords}}">
+   <meta name='author' content='i-ridebohol.com'>
+   <meta name='dcterms.rightHolder' content='i-ridebohol.com'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>   
+   <link rel='canonical' href='https://poorojepse.github.io{{site.baseurl}}{{page.url}}'/>
+   <link rel='stylesheet' href='{{site.baseurl}}/assets/css/main.css' type='text/css'>
+   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Work+Sans:300,400,600,700|Arizonia'>  
+   <link rel='shortcut icon' href='{{site.baseurl}}/favicon.ico'>
+</head>
+<body>
+   
+<div id='fb-root'></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+   
+<header id='header'>
+   <div class='container-nav'>
+      <div class='nav-container'>
+         <div class='nav-banner'>
+            <a href='{{site.baseurl}}/'>
+               {% include icons/banner.html %}
+            </a>         
+         </div>
+         
+         <nav class='nav-main'>
+            <a class='nav-item nav-link home' href='{{site.baseurl}}/'>Home</a>
+            {% for menu in site.data.settings.menu limit:3 %}
+            <a class='nav-item nav-link {{menu.url}} {% if page.url contains menu.url %}current{% endif %}' href='{{site.baseurl}}/{{menu.url}}/'>{{menu.name}}</a>
+            {% endfor %}
+         </nav>      
+      </div>   
+   </div>
+</header>

@@ -1,0 +1,79 @@
+<div class='lightbox lightbox-rent'>
+   <div class='lb-container rent-lb-container'>
+      
+      <header class='lb-header-flex'>
+         <h2 class='lb-title content-title alt-db'><span>{{page.brand}} {{page.model}}</span></h2>
+         <div class='close'></div>
+      </header>
+      
+      <div class='lb-content'>
+         <div class='rent-lb-flex'>
+            <div class='rent-lb-form-map'>
+               
+               <span class='toggle-form-map'></span>
+               
+               <div class='form-map-container'>                  
+                  <div class='form'>
+                     <form method='post' action='{{site.data.settings.form-action}}{{site.data.settings.email}}'>
+                        <label>
+                           <span>select: </span>
+                           <input class='selected' type='text' name='selected' value='{{page.brand}}: {{page.model}}' readonly>
+                        </label>
+
+                        <fieldset class='customer-info-group'>
+                           <label>
+                              <span>name</span>
+                              <input type='text' name='name'>
+                           </label>
+
+                           <label>
+                              <span>email</span>
+                              <input type='email' name='_replyto'>
+                           </label>
+
+                           <label>
+                              <span>mobile no.</span>
+                              <input type='number' name='mobile-no'>
+                           </label>
+                        </fieldset>
+
+                        <label class='customer-message'>
+                           <span>message</span>
+                           <textarea name='message'></textarea>
+                        </label>
+
+                        <fieldset class='submit'>
+                           <input type='submit' value='send'>
+                        </fieldset>
+                     </form>
+                  </div>
+
+                  <div class='map-flex'>
+                     <p class='address'>Pier - Front of Basna (Block 2), Tagbilaran City</p>
+                     <iframe src='{{site.data.settings.map}}'></iframe>
+                     <a class='see-full-screen smaller' href='{{site.data.settings.map}}' target='_blank'>see map in full screen</a>
+                  </div>                  
+               </div>
+               
+            </div>
+
+            <div class='rent-lb-sidebar-flex'>
+               
+               {% for social in site.data.settings.social %}               
+               <a href='{{social.url}}' target='_blank'><img src='{{site.baseurl}}/assets/img/social/{{social.img}}' alt='I-Ride {{social.name}}'></a>
+               {% endfor %}
+
+               <span class='call' data-smart='{{site.data.settings.mobile.smart}}' data-globe='{{site.data.settings.mobile.globe}}' data-phone='{{site.data.settings.phone}}'>
+                  <img src='{{site.baseurl}}/assets/img/phone.png' alt='iride mobile no'>
+               </span>
+
+               <a class='email' href='mailto:{{site.data.settings.email}}'>
+                  <img src='{{site.baseurl}}/assets/img/mail.png' alt='iride email'>
+               </a>
+            </div>
+            
+         </div>
+      </div>
+      
+   </div>
+</div>

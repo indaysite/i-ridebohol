@@ -1,0 +1,16 @@
+<div class='related-post-container'>
+   <h2 class='content-title text-left'><span>you may also like</span></h2>
+   <div class='related-post-flex'>
+      {% assign items = site.for-rent %}
+      {% for rel-post in items %}
+      {% if page.url != rel-post.url %}
+      <a href='{{site.baseurl}}{{rel-post.url}}' class='related-post'>
+         <div class='related-post-img'>
+            <img src='{{site.baseurl}}/assets/img/for-rent/{{rel-post.img}}' alt='Photo of {{rel-post.brand}} {{rel-post.model}} in {{site.data.settings.title}}'>
+         </div>
+         <p class='car-name'><span class='car-brand'>{{rel-post.brand}}</span><span class='car-model'> {{rel-post.model}}</span></p>
+      </a>
+      {% endif %}
+      {% endfor %}
+   </div>
+</div>

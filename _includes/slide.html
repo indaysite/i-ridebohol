@@ -1,0 +1,44 @@
+<div id='slide'>
+   <div class='slide-container'>      
+      {% for post in site.for-rent limit:5 %}
+      <div class='slide-item {% if post.active-slide %}{{post.active-slide}}{% endif %}'>
+         <div class='slide-item-container-flex'>
+            <div class='slide-img'>
+               <img src='{{site.baseurl}}/assets/img/for-rent/{{post.img}}'>            
+            </div>
+            <div class='slide-body'>
+               
+               <span class='open-quote'>{% include icons/quote.html %}</span>
+               <span class='close-quote'>{% include icons/quote.html %}</span>
+               
+               <div class='slide-header-flex'>
+                  <div class='slide-title'>
+                     <h1 class='car-model'>{{post.model}}</h1>
+                     <h2 class='car-brand'>{{post.brand}}</h2>
+                  </div>
+                  <div class='slide-cta'>
+                     <a href='{{site.baseurl}}{{post.url}}' class='rent-now-slide'>rent now</a>                  
+                  </div>
+               </div>
+               <div class='slide-desc'>
+                  {% if post.price-day %}<p class='slide-price'>RATE: P {{post.price-day}}/ DAY</p>{% endif %}
+                  {% if post.color %}<p>Color: {{post.color}}</p>{% endif %}
+                  {% if post.seat-cap %}<p>Seating Cap: {{post.seat-cap}}</p>{% endif %}
+                  {% if post.transm %}<p>Transmission: {{post.transm}}</p>{% endif %}          
+               </div>
+            </div>
+         </div>      
+      </div> 
+      {% endfor %}      
+   </div>   
+      
+   <div class='thumb-container'>
+      <div class='thumb-wrapper'>
+         {% for post in site.for-rent limit:5 %}
+         <div class='thumb-item {% if post.active-thumb %}{{post.active-thumb}}{% endif %}'>
+            <img class='thumb-img' src='{{site.baseurl}}/assets/img/for-rent/{{post.img}}'>
+         </div>      
+         {% endfor %}
+      </div>
+   </div>   
+</div>
