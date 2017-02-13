@@ -3,7 +3,7 @@ layout: post
 title: Beat Honda
 brand: Honda
 model: Beat
-color: Black/ Red
+color: Pink
 transm: Automatic
 price-day: 600
 category: bike
