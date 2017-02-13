@@ -34,7 +34,7 @@
       
    <div class='thumb-container'>
       <div class='thumb-wrapper'>
-         {% for post in site.for-rent limit:5 %}
+         {% for post in site.for-rent limit:7 %}
          <div class='thumb-item {% if post.active-thumb %}{{post.active-thumb}}{% endif %}'>
             <img class='thumb-img' src='{{site.baseurl}}/assets/img/for-rent/{{post.img}}'>
          </div>      
