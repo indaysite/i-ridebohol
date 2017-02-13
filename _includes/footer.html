@@ -3,8 +3,8 @@
       <div class='footer-container-flex'>
          <div class='f-item fb-comment'>
             <h2 class='content-title alt text-left'><span>we are very greatful</span></h2> 
-            <div class='fb-comment-container'>               
-               <div class='fb-comments' data-href='https://www.facebook.com/I-Ride-Bohol-1388552207842674/' data-numposts='2'></div>
+            <div class='fb-comment-container'>  
+               <div class='fb-comments' data-href="{% for fb in site.data.settings.social %}{% if fb.name == 'Facebook' %} {{fb.url}}{% endif %}{% endfor %}" data-numposts='2'></div>
             </div>
          </div>
 
