@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang='{{site.data.settings.lang}}'>
 <head>
-   <meta charset='utf-8'>   
    <title>{% if page.layout == 'post' %}{{page.title}} for Rent · {% elsif page.layout == 'page' %}{{page.title}} · {% endif %}{{site.data.settings.title}}{% if page.titleAfter %} · {{page.titleAfter}}{% endif %}</title>   
+   <meta charset='utf-8'>   
    <meta name='description' content="{%if page.layout == 'post' %}{{site.data.settings.title}} {{site.data.settings.subtitle}} {{page.title}} with Color of {{page.color}} & Transmission is {{page.transm}}{% elsif page.layout == 'page' %}{{page.title}} of {{site.data.settings.title}} {{site.data.settings.subtitle}}{% else %}{{site.data.settings.title}} {{site.data.settings.subtitle}}{% endif %}">
    <meta name='keywords' content="{%if page.layout == 'post' %}{{site.data.settings.title}} {{site.data.settings.subtitle}} {{page.title}} with Color of {{page.color}} & Transmission is {{page.transm}}{% elsif page.layout == 'page' %}{{page.title}} of {{site.data.settings.title}} {{site.data.settings.subtitle}}{% else %}{{site.data.settings.title}} {{site.data.settings.subtitle}}{% endif %}, {{site.data.settings.keywords}}">
    <meta name='author' content='{{site.data.settings.author}}'>
