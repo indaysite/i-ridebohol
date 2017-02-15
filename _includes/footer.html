@@ -53,20 +53,27 @@
 <script>
    $(document).ready(function() {
       var $rentNow = $('.rent-container'),
-          $rentNowParent = $('#articles');
+          $rentNowHeight = $('.rent-container').height(),
+          $rentNowParent = $('#articles'),
+          $rentNowParentHeight = $('#articles').height();
 
       var toFixed = function() {
          var st = $(window).scrollTop();
          var ot = $rentNowParent.offset().top;
 
          if ( st > ot ) {
-            $rentNow.css({'position' : 'fixed'});
-         } else {
-            if ( st <= ot ) {
-               $rentNow.css({'position' : ''});
-            }
+            $rentNow.css({'position' : 'fixed', 'bottom' : '', 'top': ''});
          }
+         
+         if ( st <= ot ) {
+            $rentNow.css({'position' : ''});
+         }
+         
+         if ( st + $rentNowHeight > ot + $rentNowParentHeight ) {
+            $rentNow.css({'bottom' : '10px', 'top' : 'auto', 'position' : ''});
+         }         
       }
+      
       $(window).scroll(toFixed);
       toFixed();
       })
