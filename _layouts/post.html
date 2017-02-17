@@ -13,8 +13,11 @@ layout: page
             {% if page.color %}
             <p class='color'>Color: {{page.color}}</p>
             {% endif %}
-            {% if page.seat-cap %}
-            <p class='setting-cap'>Seating Cap.: {{page.seat-cap}}</p>
+            {% if page.door %}
+            <p>Doors: {{page.door}}</p>
+            {% endif %}
+            {% if page.seat %}
+            <p class='setting-cap'>Seating Cap.: {{page.seat}}</p>
             {% endif %}
             <p class='transm'>Transmission: {{page.transm}}</p>
             <p class='price'>RATE: P {{page.price-day}}/ DAY</p>

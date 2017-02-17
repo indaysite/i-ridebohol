@@ -4,7 +4,9 @@ title: Innova Toyota
 brand: Toyota
 model: Innova
 color: Blue
-seat-cap: 7
+seat: 7 Seats
+door: 4 Doors
+cooling: Air Condition
 transm: 5-speed Manual
 price-day: 2&#44;500
 price-ovrnight: 2&#44;500

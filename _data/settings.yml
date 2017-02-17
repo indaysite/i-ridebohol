@@ -28,7 +28,6 @@ menu:
 - {name: Car Rental, url: 'rent-list'}
 - {name: About, url: 'about'}
 - {name: Contact Us, url: 'contact'}
-- {name: Privacy Policy, url: 'privacy-policy'}
 
 advantages:
 - {name: 'Unlimited Mileage'}

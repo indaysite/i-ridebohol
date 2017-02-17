@@ -3,6 +3,7 @@ $(document).ready( function() {
    toggleMapForm();
    clickCallRent();
    backToTop();
+   detailBlock();
 })
 
 
@@ -166,5 +167,15 @@ function backToTop(){
          scrollTop: 0
       }, 800);
    });
+}
+
+function detailBlock() {
+   var $this = $('html .details-flex'),
+       width = $this.width();
    
+   if ( width < 285 ) {
+      $this.addClass('details-block');
+   } else {
+      $this.removeClass('details-block');
+   }
 }

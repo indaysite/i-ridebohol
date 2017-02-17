@@ -4,7 +4,9 @@ title: Picanto Kia
 brand: Kia
 model: Picanto
 color: White
-seat-cap: 4
+seat: 4 Seats
+door: 4 Doors
+cooling: Air Condition
 transm: 5-speed Manual
 price-day: 1&#44;500
 price-ovrnight: 2&#44;000

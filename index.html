@@ -29,24 +29,23 @@ exclude: true
          <a class='rent-cta' href='{{site.baseurl}}/rent-list/'>{% include icons/rent-button.html %}<p>rent now</p></a>
       </div>
       
-      <div class='article-container-flex'>
+      <div class='articles-container-flex'>
          {% for post in site.for-rent %}
          <div class='article-support'>
             <a href='{{site.baseurl}}{{post.url}}' class='article'>
-               <h3 class='article-name'>{{post.brand}} {{post.model}}</h3>
-               <div class='article-content-flex'>
-                  <div class='img'><img src='{{site.baseurl}}/assets/img/for-rent/{{post.img}}' alt='Photo of {{post.brand}} {{post.name}}'></div>
-                  <div class='blurb'>
-                     <p class='brand'>Brand: {{post.brand}}</p>
-                     <p class='model'>Model: {{post.model}}</p>
-                     {% if post.color %}
-                     <p class='color'>Color: {{post.color}}</p>
-                     {% endif %}                     
-                     {% if post.seat-cap %}
-                     <p class='seating-cap'>Seating Capacity: {{post.seat-cap}}</p>
-                     {% endif %}
-                     <p class='transm'>Transmition: {{post.transm}}</p>
+               <figure class='img'>
+                  <img src='{{site.baseurl}}/assets/img/for-rent/{{post.img}}' alt='{{post.brand}}: {{post.model}} for rent in {{site.data.settings.title}}'>
+               </figure>
+               <div class='text'>
+                  <h2 class='title'><span>{{ post.brand }} {{ post.model }}</span></h2>
+                  <div class='details-flex'>
+                     <p>{% include icons/color.html %}{{ post.color }}</p>                  
+                     {% if post.seat %}<p>{% include icons/seat.html %}{{ post.seat }}</p>{% endif %}
+                     {% if post.cooling %}<p>{% include icons/cooling.html %}{{ post.cooling }}</p>{% endif %}                  
+                     {% if post.door %}<p>{% include icons/car-door.html %}{{ post.door }}</p>{% endif %}                       
+                     <p>{% include icons/engine.html %}{{ post.transm }}</p>                  
                   </div>
+                  <span class='price'>RATE: P {{ post.price-day }}/ Day</span>
                </div>
             </a>
          </div>
@@ -111,8 +110,7 @@ exclude: true
          
          <div class='form-map'>
             <h2 class='content-title alt-db text-center'><span class='serve'>we are happy to serve you</span><span class='locate'>locate us</span></h2>
-            <div class='form-map-container'>
-               
+            <div class='form-map-container'>               
                <div class='form map-form-tab'>
                   <form method="POST" action='{{site.data.settings.form-action}}{{ site.data.settings.email }}'>
                      <fieldset class='contact-info-group'>
@@ -139,12 +137,9 @@ exclude: true
                </div>
                
                <div class='map map-form-tab'>
-                  <iframe src='{{site.data.settings.map}}' allowfullscreen></iframe>
-                  
-                  <a class='see-full-screen smaller' href='{{site.data.settings.map}}' target='_blank'>see map in full screen</a>
-                  
-               </div>
-               
+                  <iframe src='{{site.data.settings.map}}' allowfullscreen></iframe>                  
+                  <a class='see-full-screen smaller' href='{{site.data.settings.map}}' target='_blank'>see map in full screen</a>  
+               </div>               
             </div>           
          </div>      
       </div>      
