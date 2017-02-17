@@ -1,3 +1,9 @@
+.bg-slant   
+   background:
+      image: url('../img/slant-bg.png')
+      repeat: repeat
+      size: 12px
+
 .price
    margin-top: 1rem
    font-size: 1.2rem
@@ -6,11 +12,20 @@
    border: 1px solid $border
    +display(inline-block)
    padding: .3rem 1rem
-   +transition()
-
-   @media screen and (min-width: 768px)
-      &:hover
-         border-color: rgba($section-alt-darkblue, .6)
+      
+.vertical-middle
+   white-space: nowrap
+   text-align: center
+   
+   &:before
+      content: ''
+      height: 100%
+      vertical-align: middle
+      +display(inline-block)
+      
+   img
+      vertical-align: middle
+      
       
 .rent-now
    font-size: 2rem
@@ -50,53 +65,38 @@
    border-bottom: 1px dotted $border
    
 .back-to-top
-   +size(50px 40px)
    +display(none)
-   +position(fixed, null 15px 15px null)
-   +transition()
+   +size(42px)
+   background-color: lighten($border, 10)
+   z-index: 1
+   border-radius: 50%
+   margin-top: -25px
    cursor: pointer
-   padding: 5px
-   z-index: 1000
-   border-radius: 3px
-   border:
-      width: 1px
-      style: solid
-      color: $section-alt-darkblue
-   background-color: $section-main
+   +position(fixed, null 15px 15px null)
+   text-align: center
+   color: darken($border, 40)
    
-   svg
-      fill: $section-alt-darkblue
-      max-width: 100%
-      max-height: 100%
-      +transition()
-      
+   &:before
+      content: 'top'
+      +display(inline-block)
+      margin-top: 8px
+
    &.active-btt
       +display(block)
-      
-   &:hover
-      border-color: $section-main
-      background-color: $section-alt-darkblue
-         
-      svg
-         fill: $section-main
-      
-   @media screen and (min-width: 768px)
-      padding: 10px 5px
-      border-color: $border
-      background-color: transparent
-      +size(auto 40px)
-      
-      svg
-         fill: $border
-         +size(auto 100%)
-      
-      &:hover
-         border-color: $section-alt-darkblue
-         background-color: $section-main
-      
-         svg
-            fill: $section-alt-darkblue
    
+   @media screen and (min-width: 768px)
+      +size(50px)
+      +position(fixed, 50% 15px null null)
+      +transition-duration(.2s)
+      +transition-timing-function(ease-out)
+
+      &:hover
+         background-color: $p-color
+         color: $section-main
+
+      &:before
+         margin-top: 11px
+      
 .content-title
    z-index: 1
    text-align: left

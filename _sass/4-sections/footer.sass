@@ -52,13 +52,18 @@
 
 #copyright
    background-color: $section-alt
-
+   
    .copyright-container
       padding: .6rem 0px
       text-align: center
 
+      a
+         @extend .smaller
+
+         &:hover
+            border-bottom: 1px dotted $section-alt-darkblue
+
       p
-         color: $section-alt-darkblue
          margin: 0px
 
 @media screen and (min-width: 470px)

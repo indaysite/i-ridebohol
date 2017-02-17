@@ -243,20 +243,12 @@
                         +position(relative)
 
                         label
-                           width: 49%
-                           float: left
                            +display(flex)
                            +position(relative)
                            height: 2.5rem
                            background-color: $section-alt
                            border-radius: 4px
-                           margin: 0px 1%    
-                           
-                           &:nth-child(1)
-                              margin-left: 0px
-                           
-                           &:nth-child(2)
-                              margin-right: 0px
+                           margin: 0px 0px 1rem  
 
                            span
                               +flex(0 0 80px)
@@ -273,7 +265,6 @@
 
 
                      .contact-message
-                        margin-top: 1.5rem
                         +display(block)
 
                         textarea
@@ -299,3 +290,29 @@
                            &:hover
                               background-color: $section-alt-darkblue
                               color: $section-main
+                           
+                           
+                           
+@media screen and (min-width: 1200px)
+   #reach-us
+      .container
+         .reach-us-container-flex
+            .form-map
+               .form-map-container  
+                  .form 
+                     .contact-info-group
+                        +position(relative)
+
+                        label
+                           width: 49%
+                           float: left
+                           margin: 0px 1%    
+                           
+                           &:nth-child(1)
+                              margin-left: 0px
+                           
+                           &:nth-child(2)
+                              margin-right: 0px
+
+                     .contact-message
+                        margin-top: 1.5rem

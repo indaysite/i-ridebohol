@@ -1,248 +1,227 @@
 #articles
    border-top: 1px solid rgba($section-alt-blue, .4)
    border-bottom: 1px solid rgba($section-alt-blue, .4)
-   background-image: url('../img/slant-bg.png')
-   background-repeat: repeat
    overflow: hidden
+   @extend .bg-slant
 
    .articles-container         
+      
       .rent-container
-         z-index: 1
-         +position(absolute, 0px 15px null null)
-         +size(95px auto)
-         padding: 1rem 6px 6px
-         text-align: center
-         background-color: $section-alt-peach
-
-         &:before
-            content: ""
-            +position(absolute, null null -5px 0px)
-            +size(95px 2px)
-            background-color: $section-alt-peach
-
-         &:after
-            content: ""
-            z-index: -1
-            +position(absolute, 6px 6px 6px 6px)
-            border: 1px solid $section-alt-darkblue
-            background-color: $section-alt-peach            
-
-         .rent-img
-            +size(70px)
-            +display(inline-block)
-            margin: 30px 0px 12px
-
-            svg
-               +size(100%)
-               fill: $section-alt-darkblue
-
-         .rent-blurb
-            margin-bottom: 2rem
-
-         .rent-add
-            +display(none)
-
+         +display(none)
+            
          .rent-cta
-            +position(relative)
-            +size(100% 160px)
-            z-index: 1
-            text-transform: uppercase
-            +display(block)
-            margin: 1rem auto 0px
-            text-align: center
-            line-height: 160px
-            background-color: $section-alt-darkblue
-
-            svg
-               +display(none)
-               fill: $section-alt-darkblue
-               z-index: -1
-               +size(100%)
-               +position(absolute, 0px null null 0px)
-
             p
                @extend .rent-now
-               +display(inline-block)
-               width: 100%
-               vertical-align: middle
-               margin-bottom: 0px
-               color: $section-main
 
-            &:hover
-               .rent-now
-                  color: $rent-now
-
-      .article-container-flex
+      .articles-container-flex
          +display(block)
-         padding: 0px
+         margin-bottom: -1rem
 
          .article-support
-            padding-right: 90px
-            margin: 1rem 1rem
-            margin-left: 0px
+            margin-bottom: 1rem
 
             .article
-               +display(block)
-               +position(relative)
-               +size(100% auto)
+               margin: 0px auto
+               width: 100%
+               max-width: 320px
+               +display(block)   
+               text-align: left
+               border: 1px solid $border
+               color: $section-alt-darkblue
+               +transition()
                background-color: $section-alt
-               padding: .6rem
-               border: 1px solid rgba($section-alt-green, .3)
-               border-radius: 2px
 
-               .article-name
-                  +position(relative)
-                  margin: 0px
-                  border-radius: 0px
-                  color: $section-main
-                  text-align: center
-                  padding: .5rem
-                  background-color: $section-alt-green
-
-
-               .article-content-flex
-                  +display(flex)
-                  +flex-direction(column)
-                  +justify-content(flex-end)
-                  +size(100%)
-                  padding: .4rem
-                  border: 1px solid rgba($section-alt-green, .3)
+               .img
+                  +flex-grow(1)
+                  @extend .vertical-middle
+                  height: 300px
                   background-color: $section-main
 
-                  .img
-                     margin: 1rem 0px
-                     height: 160px
-                     line-height: 160px
-                     text-align: center
-                     
-                     img
-                        max-width: 90%
-                        max-height: 100%
+                  img
+                     max-width: 90%
+                     max-height: 80%
 
-                  .blurb
-                     +position(relative)
-                     border: 1px solid rgba($section-alt-green, .2)
-                     border-top: 2px solid rgba($section-alt-green, .4)
-                     background-color: $section-alt
-                     padding: .5rem
+               .text
+                  +flex(0 0 250px)
+                  +display(flex)
+                  +flex-direction(column)
+                  border-left: 0px
+                  background-color: transparent
+                  padding: 1rem 0px 1.5rem
+                  border-top: 1px solid $border
+                  
+                  .title
+                     @extend .content-title
+                     @extend .text-center
+                     padding: .5rem 0px 
+                     +transition()
+                     
+                     span
+                        background-color: $section-alt
+
+                  .details-flex
+                     +flex-grow(1)
+                     margin: 0px 1rem
+                     +display(flex)
+                     +flex-wrap(wrap)
+                     
+                     &.details-block
+                        +display(block)
+                           
+                        p
+                        
+                           &:nth-child(even)
+                              padding-left: 0px
 
                      p
-                        margin: 0px
+                        +flex(1 0 50%)
                         
-                        
-@media screen and (min-width: 470px)
-   #articles
-      .articles-container                    
-         .article-container-flex
-            .article-support
-               margin: 0px 1rem 2rem
-               margin-left: 0px
-               
-               .article
-                  .article-content-flex
-                     +flex-direction(row)
-                     +justify-content(flex-start)
-
-                     .img
-                        margin: 0px .5rem 0px 0px
-                        height: 225px
-                        line-height: 225px
-                        width: 200px
-                        +align-self(center)
-
-                     .blurb
-                        border-top: 1px solid rgba($section-alt-green, .2)
-                        min-width: 170px
-                        +flex-grow(1)
+                        &:nth-child(even)
+                           padding-left: 1rem
                            
-   
+                        svg
+                           margin: 0px .2rem -.1rem
+                           +size(1.2rem)
+                           fill: $section-alt-darkblue
+
+                  .price
+                     +display(block)
+                     margin: .5rem 1rem 0px
+                     +position(relative)
+                     +transition()
+                     z-index: 1
+                     text-align: center
+                     overflow: hidden
+                     min-width: 200px
+                     
+                     &:before
+                        content: ''
+                        z-index: -1
+                        +transition(all .2s ease-out)
+                        +size(calc(38px + 100%) 100%)
+                        +transform(skew(-45deg))
+                        background-color: $section-alt-peach
+                        +position(absolute, 0px null null calc(100% + 19px))
+
+@media screen and (min-width: 560px)
+   #articles
+      .articles-container    
+         .articles-container-flex
+            +display(flex)
+            +flex-wrap(wrap)
+            +justify-content(space-between)
+               
+            .article-support
+               +flex-basis(calc(50% - .5rem))
+                  
+               .article
+                  max-width: none
+                              
 @media screen and (min-width: 768px)
    #articles
-      .articles-container         
+      .articles-container                  
          .rent-container
-            +position(absolute, 0px 1rem null null)
-            padding-left: 10px
-            padding-right: 10px
-            +size(166px auto)
+            +display(block)
+            z-index: 1
+            +position(absolute, 0px null null 50%)
+            padding: 7px
+            margin-left: -65px
+            +size(130px auto)
+            text-align: center
+            background-color: $section-alt-peach
 
             &:before
+               content: ""
+               background-color: $section-alt-peach
                +position(absolute, null null -6px 0px)
-               +size(166px 3px)
+               +size(100% 3px)
 
             &:after
+               content: ""
+               z-index: -1
                +position(absolute, 10px 10px 10px 10px)
                border: 1px solid $section-alt-darkblue
-               background-color: $section-alt-peach
+               background-color: $section-alt-peach         
 
             .rent-img
                +size(90px)
+               +display(inline-block)
+               margin: 30px 0px 12px
 
-         .article-container-flex
-            +display(flex)
-            +justify-content(flex-start)
-            padding: 1rem 0px
-            +flex-wrap(wrap)
-            margin-bottom: -2rem
-            +transition()
+               svg
+                  +size(100%)
+                  fill: $section-alt-darkblue
+
+            .rent-blurb
+               margin-bottom: 2rem
+
+            .rent-add
+               +display(none)
+
+            .rent-cta
+               +position(relative)
+               +size(100% 160px)
+               z-index: 1
+               text-transform: uppercase
+               +display(block)
+               margin: 1rem auto 0px
+               text-align: center
+               line-height: 160px
+               background-color: $section-alt-darkblue
+
+               svg
+                  +display(none)
+                  fill: $section-alt-darkblue
+                  z-index: -1
+                  +size(100%)
+                  +position(absolute, 0px null null 0px)
+
+               p
+                  +display(inline-block)
+                  width: 100%
+                  vertical-align: middle
+                  margin-bottom: 0px
+                  color: $section-main
+
+               &:hover
+                  .rent-now
+                     color: $rent-now    
+
+         .articles-container-flex
+            margin-right: 100px
 
             .article-support
-               padding-right: 0px
-               +flex(0 0 auto)
+               margin-right: 1rem
+               
+         .articles-container-flex
+            +display(flex)
+            +flex-wrap(wrap)
+            margin-right: 0px
+            
+            .article-support
+               +flex-basis(50%)
+               +flex-shrink(0)
+               margin-right: 0px
 
-               &:nth-child(2n)                  
-                  .post
-                     float: left
+               &:nth-child(even)
+                  text-align: right
 
                .article
-                  +size(260px auto)
-                  +transition()
-                  cursor: pointer
+                  background-color: $section-alt
+                  width: 277px
+                  +display(inline-block)
 
-                  .article-name
-                     +position(static)
-                     min-width: 230px
-                     max-width: 300px
-                     border: 1px solid transparent
-                     +transition()
-                     
-                  .article-content-flex
-                     +flex-direction(column)
-                     +justify-content(flex-end)
-                        
-                     .img
-                        margin: 1rem 0px
-                        width: auto
-                        
-                     .blurb
-                        min-width: 0
-                        border-top: 2px solid rgba($section-alt-green, .4)
-                        +transition()  
-                  
-                  &:hover
-                     border-color: $section-alt-blue
-                  
-                     .article-name
-                        background-color: $section-main
-                        color: $section-alt-darkblue
-                        border: 1px solid $section-alt-blue
-                     
-                     .article-content-flex
-                        border-color: $section-alt-blue
-                        
-                        .blurb
-                           border-color: $section-alt-blue
-                           border-top-width: 2px
+                  .text
+                     +display(block)
+                     background-color: transparent
+                     border-left: 0px
 
 @media screen and (min-width: 992px)
    #articles
-      .articles-container         
+      .articles-container    
          .rent-container
-            +position(absolute, 0px null null 50%)
             +size(266px auto)
             margin-left: -133px
-
-            &:before
-               width: 266px
 
             .rent-add
                +display(block)
@@ -257,47 +236,29 @@
                .rent-now
                   width: 100px
                   
-         .article-container-flex
-            +justify-content(space-between)
-            padding: 1rem 1rem
+         .articles-container-flex
             margin-bottom: -3rem
-
+            
             .article-support
-               margin: 1.3rem 0px 3rem
-               +flex(0 0 50%)
-
-               &:nth-child(2n)
-                  .article
-                     float: right
+               margin-bottom: 3rem
 
                .article
                   width: 290px
-                  padding: .7rem
+                  +transition()
 
-                  .article-name
-                     +position(absolute, -1.4rem null null 50%)
-                     margin-left: -115px
-                     border-radius: 2px
-                     padding: .6rem
-
-
-                  .article-content-flex
-                     padding: .5rem
-
-                     .blurb
-                        padding: .6rem
-
-
+                  &:hover
+                     .price
+                        &:before
+                           left: -19px
+                        
+                  .text                     
+                     .title
+                        +transition()
+                              
 @media screen and (min-width: 1200px)
    #articles
-      .articles-container                     
-         .article-container-flex
+      .articles-container                 
+         .articles-container-flex
             .article-support
                .article
-                  width: 340px
-                  padding: .8rem
-
-                  .article-name
-                     padding: .8rem
-
-
+                  width: 350px
