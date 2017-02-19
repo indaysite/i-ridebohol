@@ -1,164 +1,50 @@
-.rent-list-container
-   margin-left: 1.2rem
-   margin-right: 1.2rem
-   padding: 3rem 0px
-   
+.rent-list-container   
    .rent-list-flex
-      +display(block)
-      margin: 0px 0px -20px
+      +display(flex)
+      +flex-wrap(wrap)
+      +align-items(flex-start)
+      +justify-content(flex-start)       
 
-      .list-flexitem-support  
-         +display(block)
-         width: 100%
-         max-width: 440px
-         +position(relative)
-         cursor: pointer
-         overflow: hidden
-         margin: 0px auto 20px
-         border: 1px solid $border
-         background-color: $section-alt
+      &:last-of-type
+         margin-bottom: -2rem
+
+      .article
+         max-width: 320px
+         margin: 0px auto 2rem
          
-         .list-content   
-            +transition()
-
-            .list-img
-               border-bottom: 1px solid $border
-               +size(100% 300px)
-               background-color: $section-main
-               white-space: nowrap
-               text-align: center
-
+         .text
+            .price
                &:before
-                  content: ""
-                  height: 100%
-                  +display(inline-block)
-                  vertical-align: middle
-
-               img
-                  +display(inline-block)
-                  max-width: 90%
-                  max-height: 90%
-                  vertical-align: middle
-
-            .list-title
-               margin: 1rem 0px
-                  
-               &:before
-                  background-color: $border
-                  
-               .break
                   +display(none)
 
-         .list-text
-            z-index: 1
-            +position(relative)
-            background-color: rgba($section-alt, .95)
-            +size(100% auto)
-            padding: 10px
-            padding-top: 0px
+@media screen and (min-width: 635px)
+   .rent-list-container .rent-list-flex      
+      margin: 0px -.5rem
 
-            h3
-               +display(none)
+      &:last-of-type
+         margin-bottom: -1rem
 
-            p
-               margin-bottom: 0px
-               
-            .price
-               margin-top: .5rem
-               text-align: center
-               background-color: $rent-now
-               +display(block)
-
-@media screen and (min-width: 590px)
-   .rent-list-container
-      margin: 0px auto
-      
-      .rent-list-flex
-         +display(flex)
-         +flex-wrap(wrap)
-         +justify-content(center)
-         margin: 0px -5px -12px
-         padding: 0px
-
-         .list-flexitem-support         
-            +flex(0 1 270px)
-            margin: 0px 5px 12px
-            
-            .list-content
-               .list-img
-                  height: 260px
-               
-               .list-title .break
-                  +display(block)
-                     
-            .list-text
-               .price
-                  font-size: 1.1rem
-                  padding: .3rem .4rem
-
-@media screen and (min-width: 768px)
-   .rent-list-container
-      .rent-list-flex
-         margin: 0px -7px -16px
-         
-         .list-flexitem-support         
-            +flex(0 0 240px)
-            margin: 0px 7px 16px
+      .article
+         max-width: none
+         +flex-basis(calc((100% / 2) - 1rem))
+         margin: 0px .5rem 1rem
 
 @media screen and (min-width: 992px)
-   .rent-list-container
-      .rent-list-flex
-         margin: 0px -8px -18px
+   .rent-list-container .rent-list-flex .article
+      +flex-basis(calc((100% / 3) - 1rem))
+
+      &:hover         
+         .text .details-flex
+            max-height: 500px
          
-         .list-flexitem-support         
-            +flex(0 0 280px)
-            margin: 0px 8px 18px
-            
-            &:hover
-               .list-content
-                  background-color: $section-alt-blue
-
-                  .list-title
-                     color: $border
-                  
-                     &:before
-                        background-color: $border
-                  
-                     span
-                        background-color: $section-alt-blue
-
-               .list-text
-                  left: 10%
-                  
-                  .price
-                     margin-top: 1rem
-
-            .list-content   
-               padding: 8px
-
-            .list-text
-               +position(absolute, 6px null 6px 100%)
-               +size(90% auto)
-               padding: 20px
-               +transition()
-               border:
-                  width: 1px 0px 1px 1px
-                  style: solid
-                  color: $border
-
-               &:before
-                  content: ""
-                  z-index: 1
-                  +position(absolute, 0px null 0px 0px)
-                  width: 5px
-                  background-color: rgba($section-alt-blue, .5)
-
+      .text
+         .details-flex
+            max-height: 0px
+            overflow: hidden
+            +transition-duration(1s)
+            +transition-timing-function(ease-out)
+         
 @media screen and (min-width: 1200px)
-   .rent-list-container
-      .rent-list-flex
-         margin: 0px -10px -22px
-         +justify-content(flex-start)
-            
-         .list-flexitem-support  
-            margin: 0px 10px 22px
-            +flex(0 0 277px)
+   .rent-list-container .rent-list-flex .article
+      +flex-basis(calc((100% / 4) - 1rem))
+

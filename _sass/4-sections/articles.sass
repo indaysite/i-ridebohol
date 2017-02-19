@@ -4,8 +4,7 @@
    overflow: hidden
    @extend .bg-slant
 
-   .articles-container         
-      
+   .articles-container     
       .rent-container
          +display(none)
             
@@ -18,90 +17,7 @@
          margin-bottom: -1rem
 
          .article-support
-            margin-bottom: 1rem
-
-            .article
-               margin: 0px auto
-               width: 100%
-               max-width: 320px
-               +display(block)   
-               text-align: left
-               border: 1px solid $border
-               color: $section-alt-darkblue
-               +transition()
-               background-color: $section-alt
-
-               .img
-                  +flex-grow(1)
-                  @extend .vertical-middle
-                  height: 300px
-                  background-color: $section-main
-
-                  img
-                     max-width: 90%
-                     max-height: 80%
-
-               .text
-                  +flex(0 0 250px)
-                  +display(flex)
-                  +flex-direction(column)
-                  border-left: 0px
-                  background-color: transparent
-                  padding: 1rem 0px 1.5rem
-                  border-top: 1px solid $border
-                  
-                  .title
-                     @extend .content-title
-                     @extend .text-center
-                     padding: .5rem 0px 
-                     +transition()
-                     
-                     span
-                        background-color: $section-alt
-
-                  .details-flex
-                     +flex-grow(1)
-                     margin: 0px 1rem
-                     +display(flex)
-                     +flex-wrap(wrap)
-                     
-                     &.details-block
-                        +display(block)
-                           
-                        p
-                        
-                           &:nth-child(even)
-                              padding-left: 0px
-
-                     p
-                        +flex(1 0 50%)
-                        
-                        &:nth-child(even)
-                           padding-left: 1rem
-                           
-                        svg
-                           margin: 0px .2rem -.1rem
-                           +size(1.2rem)
-                           fill: $section-alt-darkblue
-
-                  .price
-                     +display(block)
-                     margin: .5rem 1rem 0px
-                     +position(relative)
-                     +transition()
-                     z-index: 1
-                     text-align: center
-                     overflow: hidden
-                     min-width: 200px
-                     
-                     &:before
-                        content: ''
-                        z-index: -1
-                        +transition(all .2s ease-out)
-                        +size(calc(38px + 100%) 100%)
-                        +transform(skew(-45deg))
-                        background-color: $section-alt-peach
-                        +position(absolute, 0px null null calc(100% + 19px))
+            margin-bottom: 2rem
 
 @media screen and (min-width: 560px)
    #articles
@@ -113,9 +29,6 @@
                
             .article-support
                +flex-basis(calc(50% - .5rem))
-                  
-               .article
-                  max-width: none
                               
 @media screen and (min-width: 768px)
    #articles
@@ -186,12 +99,6 @@
                &:hover
                   .rent-now
                      color: $rent-now    
-
-         .articles-container-flex
-            margin-right: 100px
-
-            .article-support
-               margin-right: 1rem
                
          .articles-container-flex
             +display(flex)
@@ -205,16 +112,6 @@
 
                &:nth-child(even)
                   text-align: right
-
-               .article
-                  background-color: $section-alt
-                  width: 277px
-                  +display(inline-block)
-
-                  .text
-                     +display(block)
-                     background-color: transparent
-                     border-left: 0px
 
 @media screen and (min-width: 992px)
    #articles
@@ -241,24 +138,3 @@
             
             .article-support
                margin-bottom: 3rem
-
-               .article
-                  width: 290px
-                  +transition()
-
-                  &:hover
-                     .price
-                        &:before
-                           left: -19px
-                        
-                  .text                     
-                     .title
-                        +transition()
-                              
-@media screen and (min-width: 1200px)
-   #articles
-      .articles-container                 
-         .articles-container-flex
-            .article-support
-               .article
-                  width: 350px

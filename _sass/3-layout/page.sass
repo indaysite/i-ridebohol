@@ -5,8 +5,11 @@
       z-index: 1
       +size(100% auto)
       +position(relative)
-      background-color: $section-alt
-      border-bottom: 1px solid $section-alt-blue
+      background-color: $section-main
+      border:
+         width: 1px 0px 
+         style: solid 
+         color: $section-alt-blue
 
       .breadcrumb-container
          padding: .15rem .5rem .1rem
@@ -55,7 +58,7 @@
       .breadcrumb
          +size(100% auto)
          padding-top: 52px
-         border-bottom: 0px
+         border: 0px
          background-color: initial
          
          &:before
