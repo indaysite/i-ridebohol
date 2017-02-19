@@ -2,6 +2,7 @@
 layout: post
 title: Picanto Kia
 brand: Kia
+suffix: Manual
 model: Picanto
 color: White
 seat: 4 Seats

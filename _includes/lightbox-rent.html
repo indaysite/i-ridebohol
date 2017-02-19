@@ -17,7 +17,7 @@
                      <form method="POST" action='{{site.data.settings.form-action}}{{site.data.settings.email}}'>
                         <label>
                            <span>select: </span>
-                           <input class='selected' type='text' name='selected' value='{{page.brand}}: {{page.model}}' readonly>
+                           <input class='selected' type='text' name='selected' value='{{page.brand}}: {{page.model}} {% if page.suffix %}- {{ page.suffix }}{% endif %}' readonly>
                         </label>
 
                         <fieldset class='customer-info-group'>
