@@ -2,34 +2,24 @@
 layout: page
 ---
 
-<section class='container post-container'>   
-   
-   <div class='post-container-flex'>      
-      <div class='post-text-flex'>
-         <div class='post-text'>
-            <h2 class='post-title-size content-title text-left'><span>{{page.brand}} {{page.model}}</span></h2>
-            <p class='brand'>Brand: {{page.brand}}</p>
-            <p class='model'>Model: {{page.model}}</p>
-            {% if page.color %}
-            <p class='color'>Color: {{page.color}}</p>
-            {% endif %}
-            {% if page.door %}
-            <p>Doors: {{page.door}}</p>
-            {% endif %}
-            {% if page.seat %}
-            <p class='setting-cap'>Seating Cap.: {{page.seat}}</p>
-            {% endif %}
-            <p class='transm'>Transmission: {{page.transm}}</p>
-            <p class='price'>RATE: P {{page.price-day}}/ DAY</p>
-            
+<section class='container post-container'>      
+   <section class='article'>
+      <figure class='img'>
+         <img src='{{site.baseurl}}/assets/img/for-rent/{{page.img}}' alt='{{page.brand}}: {{page.model}} for rent in {{site.data.settings.title}}'>
+      </figure>
+      <div class='text'>
+         <h2 class='title'>{{ page.brand }} {{ page.model }}</h2>
+         <div class='details-flex'>
+            <p>{% include icons/color.html %}{{ page.color }}</p>                  
+            {% if page.seat %}<p>{% include icons/seat.html %}{{ page.seat }}</p>{% endif %}
+            {% if page.cooling %}<p>{% include icons/cooling.html %}{{ page.cooling }}</p>{% endif %}                  
+            {% if page.door %}<p>{% include icons/car-door.html %}{{ page.door }}</p>{% endif %}                       
+            <p>{% include icons/engine.html %}{{ page.transm }}</p>    
          </div>
-         <a href='#' class='rent-now rent-now-onpage rent-this-car' data-model='{{page.model}}'>rent this {{page.category}}</a>
+         <span class='price'>RATE: P {{ page.price-day }}/ Day</span>
+         <span class='rent rent-now'>rent this {{ page.category }}</span>
       </div>
-
-      <div class='post-img'>
-         <img src='{{site.baseurl}}/assets/img/for-rent/{{page.img}}' alt='Photo of {{page.brand}} {{page.name}} in {{site.data.settings.title}}'>
-      </div>      
-   </div>
-   
-   {% include related-post.html %}
+   </section>
 </section>
+   
+{% include related-post.html %}

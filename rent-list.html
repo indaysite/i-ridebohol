@@ -10,21 +10,20 @@ changefreq: daily
 <section class='container rent-list-container'>
    <div class='rent-list-flex'>
       {% for post in site.for-rent %}
-      <a class='list-flexitem-support' href='{{site.baseurl}}{{post.url}}'>
-         <div class='list-content'>
-            <div class='list-img'>
-               <img class='img' src='{{site.baseurl}}/assets/img/for-rent/{{post.img}}' alt='Photo of {{post.brand}} {{post.name}}'>
-            </div>
-            <h2 class='list-title content-title alt-db text-center'><span>{{post.brand}} <br class='break' />{{post.model}}</span></h2>         
-         </div>
-         <div class='list-text'>
-            <h3><span class='cap'>{{post.brand}}</span> {{post.model}}</h3>
-            <p>Brand: {{post.brand}}</p>
-            <p>Model: {{post.model}}</p>
-            {% if post.color %}<p>Color: {{post.color}}</p>{% endif %}
-            {% if post.seat %}<p>Seating Cap: {{post.seat}}</p>{% endif %}
-            <p>Transmission: {{post.transm}}</p>
-            <p class='price'>RATE: P {{post.price-day}}/ DAY</p>            
+      <a class='article' href='{{site.baseurl}}{{post.url}}'>
+         <figure class='img'>
+            <img src='{{site.baseurl}}/assets/img/for-rent/{{post.img}}' alt='{{post.brand}}: {{post.model}} for rent in {{site.data.settings.title}}'>
+         </figure>
+         <div class='text'>
+            <h2 class='title'><span>{{ post.brand }} {{ post.model }}</span></h2>
+            <div class='details-flex'>
+               <p>{% include icons/color.html %}{{ post.color }}</p>                  
+               {% if post.seat %}<p>{% include icons/seat.html %}{{ post.seat }}</p>{% endif %}
+               {% if post.cooling %}<p>{% include icons/cooling.html %}{{ post.cooling }}</p>{% endif %}                  
+               {% if post.door %}<p>{% include icons/car-door.html %}{{ post.door }}</p>{% endif %}                       
+               <p>{% include icons/engine.html %}{{ post.transm }}</p>                  
+            </div>  
+            <span class='price'>RATE: P {{ post.price-day }}/ Day</span>
          </div>
       </a>
       {% endfor %}
