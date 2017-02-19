@@ -22,7 +22,7 @@
             <ul class='sub-items'>
                {% assign items = site.for-rent | where: 'category', 'car' %}
                {% for post in items %}
-               <li class='sub-item'><a href='{{site.baseurl}}{{post.url}}'><span class='cap'>{{post.brand}}</span>: {{post.model}}</a></li>
+               <li class='sub-item'><a href='{{site.baseurl}}{{post.url}}'><span class='cap'>{{post.brand}}</span>: {{post.model}} {% if post.suffix %}- {{ post.suffix }} {% endif %}</a></li>
                {% endfor %}
             </ul>
          </div>         
