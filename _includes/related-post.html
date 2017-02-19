@@ -2,9 +2,8 @@
    <div class='container related-post-container'>
       <h2 class='content-title text-center'><span>you may also like</span></h2>
       <div class='related-post-flex'>
-         {% assign items = site.for-rent %}
-         {% for post in items %}
-         {% if page.url != rel-post.url %}
+         {% for post in site.for-rent %}
+         {% if page.url != post.url %}
          <a href='{{site.baseurl}}{{post.url}}' class='post'>
             <figure class='img'> 
                <img src='{{site.baseurl}}/assets/img/for-rent/{{post.img}}' alt='{{post.brand}}: {{post.model}} for rent in {{site.data.settings.title}}'>
