@@ -8,7 +8,7 @@
             <figure class='img'> 
                <img src='{{site.baseurl}}/assets/img/for-rent/{{post.img}}' alt='{{post.brand}}: {{post.model}} for rent in {{site.data.settings.title}}'>
             </figure>
-            <p class='title'>{{ post.brand }} {{ post.model }}</p>
+            <p class='title'>{{ post.brand }} · {{ post.model }}{% if post.suffix %}<br />{{ post.suffix }}{% endif %}</p>
          </a>
          {% endif %}
          {% endfor %}
